@@ -15,6 +15,7 @@ public class Ejercicios2025 {
      */
     public static void main(String[] args) {
         int a = 9;
+        int n  = 8;
     } 
     
 }
