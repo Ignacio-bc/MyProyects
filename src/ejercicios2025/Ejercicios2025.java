@@ -17,6 +17,7 @@ public class Ejercicios2025 {
         int a = 9;
         int n  = 8;
         int k = 9;
+        int l = 3;
     } 
     
 }
