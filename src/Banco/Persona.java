@@ -128,16 +128,17 @@ public class Persona {
 
     @Override
     public String toString() {//Bien
-        String sol = "Titular de la cuenta: " + this.nombre + "\n DNI: " + DNI + ", cuentas: "+ "\n";
+        String sol = "Titular de la cuenta: " + this.nombre + "\n DNI: " + DNI + ", cuentas: " + "\n";
 
         for (int i = 0; i < cuentas.length; i++) {
             if (cuentas[i] != null) {
-                sol = sol +(i+1)+". " + cuentas[i].toString() +"\n";
+                sol = sol + (i + 1) + ". " + cuentas[i].toString() + "\n";
             } else {
-                System.out.println((i + 1)+". " + "Espacio Vacio" +"\n");
+                System.out.println((i + 1) + ". " + "Espacio Vacio" + "\n");
             }
         }
 
         return sol;
     }
+
 }

@@ -12,25 +12,20 @@ import java.util.Scanner;
  */
 public class Biblioteca {
 
-    //Un atributo privado N que nos índique el número total de libros (poner por ejemplo 10).
     private int N = 10;
-//Un atributo libro de tipo Libro (que debe ser un array para guardar los 10 libros)
     public Libro[] libros = new Libro[N];
-//Un atributo privado numLibros para guardar el número de libros.
 
+    //Constructores:
     public Biblioteca() {
 //* Este método obligatoriamente debe ir generando todos los libros guardándolos en el array.
-//Dicho de otro modo, debemos de tener guardada la información de los libros en un array de 10 elementos.
         for (int i = 0; i < libros.length; i++) {
             Libro e = new Libro();
             libros[i] = e;
         }
     }
 
-    public Biblioteca(Libro[] libros, int cont) {
-        // Scanner sc = new Scanner(System.in);
-//* Dado un libro de tipo Libro [] introducir los libros y un número de libros que viene dado por el parámetro CONT.
-
+    public Biblioteca(Libro[] libros) {
+        this.libros = libros;
     }
 
     public Libro[] getLibros() {
@@ -40,19 +35,7 @@ public class Biblioteca {
     public void setLibros(Libro[] libros) {
         this.libros = libros;
     }
-
-    public int getCont() {
-        return this.numLibros;
-    }
-
-    public void setCont(int cont) {
-        this.numLibros = cont; //num de libros?
-    }
-//
-//    public static int getN() {
-//        return this.N;
-//    }
-
+    
     public boolean equals(Biblioteca biblioteca) {
 //* Devuelve TRUE si los libros de la biblioteca no son los mismos y FALSE en caso contrario. Tener en cuenta que tenemos GUARDADO LOS LIBROS en un array de libros.
         for (int i = 0; i < this.libros.length; i++) {
@@ -104,7 +87,8 @@ Devuelve false si el libro no está en la biblioteca. Tener en cuenta los libros
     public boolean insertar(Libro libro) {
         /*Si tengo espacio en la biblioteca y no hay otro libro
 con ese mismo código isbn SE INSERTA el libro que viene dado por el parámetro libro. Se aconseja usar el método anterior BUSCARPOS */
-        if (!(buscar(libro.getIsbn())));{
+        if (!(buscar(libro.getIsbn())));
+        {
             for (int i = 0; i < this.libros.length; i++) {
                 if (null == this.libros[i]) {
                     this.libros[i] = libro;
@@ -120,12 +104,12 @@ con ese mismo código isbn SE INSERTA el libro que viene dado por el parámetro 
         /*Si existe un libro con ese isbn en la biblioteca lo borro
 en caso contrario no hago nada. Se aconseja usar el método BUSCARPOS*/
         int a = this.buscarPos(isbn);
-       if(a>=0){//PREGUNTAR A IVAN
-           this.libros[a] = null;
-           System.out.println("Se elimino");
-           return true;
-       }
-       
+        if (a >= 0) {//PREGUNTAR A IVAN
+            this.libros[a] = null;
+            System.out.println("Se elimino");
+            return true;
+        }
+
         System.out.println("No se elimino");
         return false;
     }

@@ -17,6 +17,13 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Persona P1 = new Persona();
+        Persona P2 = new Persona();
+        Cuenta C1 = new Cuenta(100,P1 );
+        Cuenta C2 = new Cuenta(200,P2 );
+        System.out.println(C1.getN_cuenta());
+        System.out.println(C2.getN_cuenta());
+
         Banco Banco = new Banco();
         Scanner sc = new Scanner(System.in);
         menuPrincipal(Banco);
@@ -65,14 +72,14 @@ public class Main {
                 case 1:
                     System.out.println("Sacar dinero:");
                     System.out.println("Cuanto dinero deseas retirar?");
-                    double retirar = sc.nextDouble();
+                    int retirar = sc.nextInt();
                     sc.nextLine();
                     Cliente.seleccionarCuenta().retirarDinero(retirar);
                     break;
                 case 2:
                     System.out.println("Meter dinero");
                     System.out.println("Cuantro desea ingresar?");
-                    double ingreso = sc.nextDouble();
+                    int ingreso = sc.nextInt();
                     Cliente.seleccionarCuenta().ingresarSaldo(ingreso);
                     break;
                 case 3:
@@ -121,8 +128,10 @@ public class Main {
                 case 5:
                     System.out.println("Abrir una cuenta nueva:");
                     //Cuenta a = Banco.crearCuenta();
-                   // System.out.println("Seleccionar El mismo cliente para confirmar");
+                    // System.out.println("Seleccionar El mismo cliente para confirmar");
                     Banco.altaCliente();
+                    System.out.println("----");
+                    System.out.println("El estado del banco es:");
                     Banco.verBanco();
                     break;
                 case 6:
