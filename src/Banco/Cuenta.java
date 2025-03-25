@@ -14,8 +14,8 @@ public class Cuenta {
     private int saldo;
     private Persona titular;
     private int n_cuenta;
-    private static int contador = 100;
-  
+    private static int contador =  100;
+    
     public Cuenta() {
         this.saldo = -1;
         this.titular = new Persona();
