@@ -9,5 +9,5 @@ package Banco;
  * @author ignac
  */
 public class CuentaCorriente {
-    
+     
 }
